@@ -1,14 +1,18 @@
-<div class="not_logged">
+<div class="login">
     <div class='card-header col-md-10'>
         <h2>Sign in</h2>
     </div>
     <div>
-        <input type="text" id="email" name="Email">
-        <input type="text" id="password" name="Password">
-        <button>Login</button>
+        <form class="login-form">
+            <input type="text" id="login-email" name="Email">
+            <input type="text" id="login-password" name="Password">
+            <button id="login-btn">Login</button>
+        </form>
     </div>
     <div>
         <p>New user?</p>
-        <button>Create an account</button>
+        <a href="/views/signup.handlebars" class="button" id="signup-btn">Sign up</a>
     </div>
 </div>
+
+<script src='./assets/js/login.js'></script>
