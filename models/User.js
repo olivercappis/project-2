@@ -47,13 +47,6 @@ User.init(
             type: DataTypes.ENUM('male', 'female'),
             allowNull: false,
         },
-        connections: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        }
     },
     {
         sequelize,
