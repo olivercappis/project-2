@@ -3,12 +3,20 @@
         <h2>Sign in</h2>
     </div>
     <div>
-        <input type="text" id="email" name="Email">
-        <input type="text" id="password" name="Password">
-        <button>Login</button>
+        <form class="login-form">
+            <input type="text" id="login-email" name="Email">
+            <input type="text" id="login-password" name="Password">
+            <button id="login-btn">Login</button>
+        </form>
     </div>
     <div>
-        <p>New user?</p>
-        <button>Create an account</button>
+        <form class="signup-form">
+            <p>New user?</p>
+            <input type="text" id="signup-email" name="Email">
+            <input type="text" id="signup-password" name="Password">
+            <button id="signup-btn">Sign up</button>
+        </form>
     </div>
 </div>
+
+<script src='./assets/js/login.js'></script>
