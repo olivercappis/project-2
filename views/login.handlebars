@@ -1,17 +1,26 @@
+<div class="not_logged" style="display: flex;
+    flex-direction: column;
+    align-items: center;">
 <div class="login">
     <div class='card-header col-md-10'>
         <h2>Sign in</h2>
     </div>
     <div>
-        <form class="login-form">
+        <form class="login-form" style="display: flex;
+    flex-direction: column;">
             <input type="text" id="login-email" name="Email">
             <input type="text" id="login-password" name="Password">
             <button id="login-btn">Login</button>
         </form>
     </div>
     <div>
-        <p>New user?</p>
-        <a href="/views/signup.handlebars" class="button" id="signup-btn">Sign up</a>
+        <form class="signup-form" style="display: flex;
+    flex-direction: column;">
+            <h2>New user?</h2>
+            <input type="text" id="signup-email" name="Email">
+            <input type="text" id="signup-password" name="Password">
+            <button id="signup-btn">Sign up</button>
+        </form>
     </div>
 </div>
 
