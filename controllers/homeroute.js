@@ -68,6 +68,44 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// Route to render the men page
+router.get('/men', async (req, res) => {
+    try {
+      const userData = await User.findAll({
+        where: { status: 'male' },
+        attributes: ['first_name', 'last_name', 'age', 'about_you']
+      });
+  
+      const men = userData.map((user) => user.get({ plain: true }));
+  
+      res.render('men', { 
+        men, 
+        logged_in: req.session.logged_in 
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
+  // Route to render the women page
+  router.get('/women', async (req, res) => {
+    try {
+      const userData = await User.findAll({
+        where: { status: 'female' },
+        attributes: ['first_name', 'last_name', 'age', 'about_you']
+      });
+  
+      const women = userData.map((user) => user.get({ plain: true }));
+  
+      res.render('women', { 
+        women, 
+        logged_in: req.session.logged_in 
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
