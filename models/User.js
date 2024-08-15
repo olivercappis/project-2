@@ -43,7 +43,7 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        status: {
+        gender: {
             type: DataTypes.ENUM('male', 'female'),
             allowNull: false,
         },
