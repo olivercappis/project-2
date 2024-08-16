@@ -1,42 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const signupForm = document.getElementById('signup');
+document.addEventListener('DOMContentLoaded', function () {
+    const submitButton = document.getElementById('menBtn');
 
-    signupForm.addEventListener('submit', function(event) {
-        event.preventDefault(); 
+    submitButton.addEventListener('click', function () {
+        const email = document.getElementById('signup-email').value.trim();
+        const password = document.getElementById('signup-password').value.trim();
+        const firstName = document.getElementById('first-name').value.trim();
+        const lastName = document.getElementById('last-name').value.trim();
+        const age = document.getElementById('age').value.trim();
+        const gender = document.getElementById('gender').value.trim();
+        const aboutMe = document.getElementById('about-me').value.trim();
 
-        const email = document.getElementById('signup-email').value;
-        const password = document.getElementById('signup-password').value;
-        const firstName = document.getElementById('first-name').value;
-        const lastName = document.getElementById('last-name').value;
-        const age = document.getElementById('age').value;
-        const gender = document.getElementById('gender').value;
-        const aboutMe = document.getElementById('about-me').value;
+
+        // Check if all required fields are filled and validate age
+        if (!email || !password || !firstName || !lastName || isNaN(age)) {
+            alert('Please fill in all required fields and ensure age is a number.');
+            return;
+        }
 
         const formData = {
             email: email,
             password: password,
-            firstName: firstName,
-            lastName: lastName,
+            first_name: firstName,
+            last_name: lastName,
             age: age,
             gender: gender,
-            aboutMe: aboutMe
+            about_you: aboutMe
         };
-
-        // Send form data to server
-        fetch('/api/users/about_you', {
-            method: 'POST', 
+        console.log('FormData being sent:', formData);
+        fetch('api/users/about_you', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(formData) 
+            body: JSON.stringify(formData)
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            alert('Signup successful!');
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+            .then(response => response.json())
+        alert('Signup successful!');
+        window.location.href = '/';
+
     });
 });
