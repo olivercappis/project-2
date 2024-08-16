@@ -6,6 +6,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
+        console.log(req.session.user_id)
         const userData = await User.findByPk(req.session.user_id,
             {
                 attributes: {
@@ -21,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
         )
 
 
-        const user = userData.map((user) => user.get({ plain: true }))
+        const user = userData.get({ plain: true })
 
 
         res.render('profile', { user })

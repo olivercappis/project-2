@@ -1,13 +1,17 @@
 <div>
     <h1>Women</h1>
 </div>
+{{#each users as |user| }}
+
+
 <section id="connection-card">
-    <p>First Name: {{first_name}}</p>  
-    <p>Last Name: {{last_name}}</p>
-    <p>Age: {{age}}</p>
-    <p>About You:
-    {{about_you}}</p>
+    <p>First Name: {{user.first_name}}</p>
+    <p>Last Name: {{user.last_name}}</p>
+    <p>Age: {{user.age}}</p>
+    <p>About You: {{user.about_you}}</p>
+    <button class="btn-bd-primary" id="connect-btn">Connect</button>
 </section>
-<button class="btn-bd-primary" id="connect-btn">Connect</button>
+
+{{/each}}
 </div>
- <script src='./js/connectbtn.js'></script>
+<script src='./js/connectbtn.js'></script>
