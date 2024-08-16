@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        const userData = await User.findAll(
+        const userData = await User.findByPk(req.session.user_id,
             {
                 attributes: {
                     exclude: ['password',]
@@ -20,14 +20,11 @@ router.get('/', withAuth, async (req, res) => {
             }
         )
 
-        const connectionData = await Connection.findAll()
+
+        const user = userData.map((user) => user.get({ plain: true }))
 
 
-        const users = userData.map((user) => user.get({ plain: true }))
-        const connections = connectionData.map((connection) => connection.get({ plain: true }))
-
-
-        res.render('profile', { users, connections })
+        res.render('profile', { user })
     } catch (err) {
         res.status(500).json(err)
     }

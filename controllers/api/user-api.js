@@ -22,6 +22,25 @@ router.get('/', async (req, res) => {
 })
 
 
+router.get('/:id', async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    as: 'connections'
+                }
+            ]
+        })
+
+        res.json(userData)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+
+
 router.post('/login', async (req, res) => {
     try {
 

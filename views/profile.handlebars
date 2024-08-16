@@ -3,21 +3,27 @@
         <div>
             <h1>My Profile</h1>
         </div>
-        <p>First Name: <span id="profile-first-name"></span></p>
-        <p>Last Name: <span id="profile-last-name"></span></p>
-        <p>Age: <span id="profile-age"></span></p>
-        <p>About You: <span id="profile-about-you"></span></p>
+
+        <p>First Name: {{user.first_name}}</p>
+        <p>Last Name: {{user.last_name}}</p>
+        <p>Age: {{user.age}}</p>
+        <p>About You: {{user.about_you}}</p>
     </div>
+
     <div>
         <div>
             <h1>Connections</h1>
         </div>
+
+        {{#each user.connections}}
         <div class="connection-card">
-            <p>First Name: <span class="connection-first-name"></span></p>
-            <p>Last Name: <span class="connection-last-name"></span></p>
-            <p>Age: <span class="connection-age"></span></p>
-            <p>About You: <span class="connection-about-you"></span></p>
+            <p>First Name: {{this.first_name}}</p>
+            <p>Last Name: {{this.last_name}}</p>
+            <p>Age: {{this.age}}</p>
+            <p>About You: {{this.about_you}}</p>
         </div>
+        {{/each}}
+
     </div>
 </div>
 <script src='./js/profile.js'></script>
