@@ -3,19 +3,19 @@
     align-items: center;">
     <div class="login">
         <div class='card-header col-md-10'>
-            <h2>Sign in</h2>
+            <h2 id="signinText">Sign in</h2>
         </div>
         <div>
             <form class="login-form" style="display: flex;
     flex-direction: column;">
                 <input type="text" id="login-email" name="Email">
                 <input type="text" id="login-password" name="Password">
-                <button class="btn-bd-primary" id="login-btn">Login</button>
+                <button type="button" id="menBtn" class="btn btn-danger btn-lg">Login</button>
             </form>
         </div>
         <div>
-            <h2>New user?</h2>
-            <a href="/user"><button class="btn-bd-primary" id="signup-btn">Sign up</button></a>
+            <h2 id="newuserText">New user?</h2>
+            <a href="/user"><button type="button" id="signUpbtn" class="btn btn-danger btn-lg">Sign up</button></a>
         </div>
     </div>
 

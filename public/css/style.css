@@ -5,7 +5,15 @@ header {
     padding-top: 1%;
     padding-bottom: 1%;
     align-items: center;
-    }
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#signinText, #newuserText {
+    text-align: center;
+}
 
 .selection {
     display:flex;
@@ -33,17 +41,20 @@ header {
 #signup {
     display: flex;
     justify-content: center;
-
+    margin-left:3%;
 }
 
 h2 {
     color: #e30404;
     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
-
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
-    background-color: rgb(149, 77, 216);
+    background-color: rgb(89, 60, 116);
 }
 
 #profile {
@@ -64,64 +75,17 @@ body {
     padding: 1%;
 }
 
+#signupBtn {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1% 1%;
+    margin-left: 3%;
+}
+
 #signup {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#signup-email {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px  
-}
-
-#signup-password {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px  
-}
-
-#first-name {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px  
-}
-
-#last-name {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px  
-}
-
-#age {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px  
-}
-
-#gender {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px  
 }
 
 #about-me {
@@ -133,4 +97,47 @@ body {
     border-radius: 4px  
 }
 
+:is(#signup-email, #signup-password, #first-name, #last-name, #age, #gender) {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
 
+:is(#login-email, #login-password) {
+    width: 105%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px
+}
+
+#signUpbtn {
+    text-align: center;
+    margin-left: 25%;
+}
+
+
+#profileInfo {
+    border: solid red;
+    color: white;
+    border-radius: 10px;
+}
+
+#connection-card {
+    border: solid red;
+    color: white;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #e30404;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
