@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['first_name', 'last_name', 'age', 'about_you'],
         },
       ],
     });
@@ -20,28 +20,6 @@ router.get('/', async (req, res) => {
     res.render('selection', { 
       users, 
       logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/user/:id', async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('user', {
-      ...user,
-      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -72,13 +50,13 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/men', async (req, res) => {
     try {
       const userData = await User.findAll({
-        where: { status: 'male' },
+        where: { gender: 'male' },
         attributes: ['first_name', 'last_name', 'age', 'about_you']
       });
   
       const men = userData.map((user) => user.get({ plain: true }));
   
-      res.render('men', { 
+      res.render('guys', { 
         men, 
         logged_in: req.session.logged_in 
       });
@@ -91,13 +69,13 @@ router.get('/men', async (req, res) => {
   router.get('/women', async (req, res) => {
     try {
       const userData = await User.findAll({
-        where: { status: 'female' },
+        where: { gender: 'female' },
         attributes: ['first_name', 'last_name', 'age', 'about_you']
       });
   
       const women = userData.map((user) => user.get({ plain: true }));
   
-      res.render('women', { 
+      res.render('girls', { 
         women, 
         logged_in: req.session.logged_in 
       });
