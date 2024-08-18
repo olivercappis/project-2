@@ -9,12 +9,19 @@
         <h2>Last Name</h2>
         <input type="text" id="last-name" name="Last Name">
         <h2>Age</h2>
-        <input type="text" id="age" name="Age">
+        <select id="age" name="Age">
+            <option value="" disabled selected>Select your age</option>
+        </select>
         <h2>Gender</h2>
-        <input type="text" id="gender" name="Gender">
+        <select id="gender" name="Gender">
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
         <h2>Tell Us About Yourself</h2>
         <input type="text" id="about-me" name="About Me">
     </form>
     <button type="button" id="signupBtn" class="btn btn-danger btn-lg">Submit</button>
 </div>
- <script src='./js/aboutyou.js'></script>
+
+<script src='./js/aboutyou.js'></script>
