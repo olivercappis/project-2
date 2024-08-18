@@ -3,15 +3,11 @@
         <div>
             <h2>My Profile</h2>
         </div>
-
-
-        <section id="connection-card">
-
+        <section class="profile-card">
             <p>First Name: {{user.first_name}}</p>
             <p>Last Name: {{user.last_name}}</p>
             <p>Age: {{user.age}}</p>
             <p>About You: {{user.about_you}}</p>
-
         </section>
     </div>
 
@@ -21,19 +17,16 @@
         </div>
 
         {{#each user.connections}}
-
-        <section id="connection-card">
-
-            <div class="connection-card">
+        <section class="connection-card">
+            <div>
                 <p>First Name: {{this.first_name}}</p>
                 <p>Last Name: {{this.last_name}}</p>
                 <p>Age: {{this.age}}</p>
                 <p>About You: {{this.about_you}}</p>
             </div>
-
         </section>
         {{/each}}
-
     </div>
 </div>
+
 <script src='./js/profile.js'></script>
