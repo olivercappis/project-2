@@ -9,9 +9,9 @@
     <p>Last Name: {{user.last_name}}</p>
     <p>Age: {{user.age}}</p>
     <p>About You: {{user.about_you}}</p>
-    <button class="btn-bd-primary" id="connect-btn">Connect</button>
+    <button class="btn-bd-primary connect-btn" data-connected-to-id="{{user.id}}">Connect</button>
 </section>
 
 {{/each}}
 </div>
-<script src='./js/connectbtn.js'></script>
+<script src='/js/connectbtn.js'></script>
