@@ -132,14 +132,7 @@ body {
     margin-left: 25%;
 }
 
-
-#profileInfo {
-    border: solid red;
-    color: white;
-    border-radius: 10px;
-}
-
-#connection-card {
+.connection-card, .profile-card {
     border: solid red;
     color: white;
     border-radius: 10px;
@@ -147,7 +140,7 @@ body {
     margin-right: 20px;
     margin-top: 10px;
 }
-#connection-card p {
+.connection-card p {
     margin-top: 10px;
     margin-left: 20px;
 }
