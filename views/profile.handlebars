@@ -23,6 +23,8 @@
                 <p>Last Name: {{this.last_name}}</p>
                 <p>Age: {{this.age}}</p>
                 <p>About You: {{this.about_you}}</p>
+                <button class="disconnect-btn" data-connected-to-id="{{this.id}}">Disconnect</button>
+                <div class="id-holder" data-id="{{this.id}}"></div>
             </div>
         </section>
         {{/each}}

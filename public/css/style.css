@@ -149,7 +149,7 @@ body {
     margin-left: 20px;
 }
 
-.btn-bd-primary {
+.btn-bd-primary, .disconnect-btn {
     margin-left: 20px;
     margin-bottom: 10px;
 }
