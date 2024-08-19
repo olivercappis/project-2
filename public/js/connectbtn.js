@@ -14,6 +14,9 @@ const connectBtnHandler = async (event, req) => {
     headers: { 'Content-Type': 'application/json' },
   });
 
+  const data = await response.json();
+  console.log('Response data:', data);
+
   if (response.ok) {
     console.log('Connection added!');
   } else {
