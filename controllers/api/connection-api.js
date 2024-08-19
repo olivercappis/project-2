@@ -45,7 +45,30 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.delete('/:connected_to_id', async (req, res) => {
+    try {
+        const { connected_to_id } = req.params;
+        const user_id = req.session.user_id; 
 
+    
+        const connection = await Connection.findOne({
+            where: {
+                user_id: user_id,
+                connected_to_id: connected_to_id,
+            },
+        });
+
+        if (!connection) {
+            return res.status(404).json({ message: 'Connection not found' });
+        }
+
+        await connection.destroy();
+        res.status(200).json({ message: 'Connection removed' });
+    } catch (err) {
+        console.error('Failed to delete connection:', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+});
 
 
 

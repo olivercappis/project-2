@@ -30,3 +30,40 @@ async function loadProfileData() {
 }
 
 document.addEventListener('DOMContentLoaded', loadProfileData);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const userIdElement = document.querySelector('.id-holder');
+    if (!userIdElement) {
+      console.error('User ID holder not found.');
+      return;
+    }
+  
+    const user_id = userIdElement.dataset.id;
+  
+    const disconnectBtnHandler = async (event) => {
+      event.preventDefault();
+  
+      const connected_to_id = event.target.dataset.connectedToId;
+  
+      if (!connected_to_id) {
+        console.error('Connected to ID not found.');
+        return;
+      }
+  
+      const response = await fetch(`/api/connections/${connected_to_id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        alert('Connection removed!');
+      } else {
+        alert('Failed to remove connection.');
+      }
+    };
+  
+    document.querySelectorAll('.disconnect-btn').forEach(button => {
+      button.addEventListener('click', disconnectBtnHandler);
+    });
+  });
+  
