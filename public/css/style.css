@@ -11,7 +11,8 @@ header {
     font-style: normal;
 }
 
-#signinText, #newuserText {
+#signinText,
+#newuserText {
     text-align: center;
 }
 
@@ -51,7 +52,7 @@ header {
 #signup {
     display: flex;
     justify-content: center;
-    margin-left:3%;
+    margin-left: 3%;
 }
 
 h2 {
@@ -68,7 +69,8 @@ body {
     background-color: rgb(89, 60, 116);
 }
 
-#profile {
+#profile,
+#logout {
     font-size: xx-large;
     text-decoration: underline;
     color: white;
@@ -106,7 +108,7 @@ body {
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid red;
-    border-radius: 4px  
+    border-radius: 4px
 }
 
 :is(#signup-email, #signup-password, #first-name, #last-name, #age, #gender) {
@@ -132,7 +134,8 @@ body {
     margin-left: 25%;
 }
 
-.connection-card, .profile-card {
+.connection-card,
+.profile-card {
     border: solid red;
     color: white;
     border-radius: 10px;
@@ -140,6 +143,7 @@ body {
     margin-right: 20px;
     margin-top: 10px;
 }
+
 .connection-card p {
     margin-top: 10px;
     margin-left: 20px;
