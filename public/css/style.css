@@ -144,7 +144,7 @@ body {
     margin-top: 10px;
 }
 
-.connection-card p {
+.connection-card p, .profile-card p {
     margin-top: 10px;
     margin-left: 20px;
 }

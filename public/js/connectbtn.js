@@ -18,9 +18,9 @@ const connectBtnHandler = async (event, req) => {
   console.log('Response data:', data);
 
   if (response.ok) {
-    console.log('Connection added!');
+    alert('Connection added!');
   } else {
-    alert('Connection failed.');
+    alert('Connection failed. You are already connected to this person!');
   }
 }
 
